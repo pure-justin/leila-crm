@@ -27,4 +27,9 @@
  * these Appropriate Legal Notices must retain the display of the "EspoCRM" word.
  ************************************************************************/
 
-return [];
+return [
+    'applicationName' => 'Leila CRM',
+    'companyName' => 'Leila Home Services',
+    'outboundEmailFromName' => 'Leila Support',
+    'theme' => 'Violet'
+];
