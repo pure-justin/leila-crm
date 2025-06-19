@@ -6,26 +6,28 @@
 
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
-// Handle static files
-if ($uri !== '/' && file_exists(__DIR__ . $uri)) {
+// Serve existing files directly (css, js, images, etc.)
+if ($uri !== '/' && file_exists(__DIR__ . '/public' . $uri)) {
     return false;
 }
 
-// Handle EspoCRM routing
-$_GET['route'] = $uri;
+// Handle client directory
+if (strpos($uri, '/client/') === 0 && file_exists(__DIR__ . $uri)) {
+    return false;
+}
 
-// Handle install path
+// Route everything else through public/index.php
+$_SERVER['SCRIPT_NAME'] = '/index.php';
+$_SERVER['PHP_SELF'] = '/index.php';
+
+// Handle install
 if (strpos($uri, '/install') === 0) {
-    require_once __DIR__ . '/install/index.php';
+    chdir(__DIR__ . '/install');
+    require 'index.php';
     return true;
 }
 
-// Handle API routes
-if (strpos($uri, '/api/') === 0) {
-    require_once __DIR__ . '/public/api/v1/index.php';
-    return true;
-}
-
-// Default to index.php
-require_once __DIR__ . '/index.php';
+// Handle everything else
+chdir(__DIR__ . '/public');
+require 'index.php';
 return true;
