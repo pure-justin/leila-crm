@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["php82", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.gd", "php82Extensions.mbstring", "php82Extensions.zip", "php82Extensions.curl", "php82Extensions.xml", "nodejs"]
+nixPkgs = ["php82", "php82Packages.composer", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.gd", "php82Extensions.mbstring", "php82Extensions.zip", "php82Extensions.curl", "php82Extensions.xml", "php82Extensions.dom", "php82Extensions.openssl", "php82Extensions.session", "php82Extensions.fileinfo", "nodejs"]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader"]
+cmds = ["php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\"", "php composer-setup.php", "php -r \"unlink('composer-setup.php');\"", "php composer.phar install --no-dev --optimize-autoloader"]
 
 [phases.build]
-cmds = ["mkdir -p data/cache data/logs data/upload", "chmod -R 755 data"]
+cmds = ["mkdir -p data/cache data/logs data/upload public", "chmod -R 755 data", "cp -r client public/", "cp -r install public/"]
 
 [start]
 cmd = "php -S 0.0.0.0:$PORT"
