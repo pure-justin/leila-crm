@@ -1,0 +1,64 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C084FC;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A78BFA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Flower -->
+  <g transform="translate(35, 30)">
+    <!-- Five petals evenly distributed -->
+    <g transform="translate(0, 0)">
+      <!-- Each petal is a teardrop shape -->
+      <path d="M 0,-8 Q -4,-16 0,-20 Q 4,-16 0,-8" fill="url(#purpleGradient)" transform="rotate(0)" opacity="0.9"/>
+      <path d="M 0,-8 Q -4,-16 0,-20 Q 4,-16 0,-8" fill="url(#purpleGradient)" transform="rotate(72)" opacity="0.9"/>
+      <path d="M 0,-8 Q -4,-16 0,-20 Q 4,-16 0,-8" fill="url(#purpleGradient)" transform="rotate(144)" opacity="0.9"/>
+      <path d="M 0,-8 Q -4,-16 0,-20 Q 4,-16 0,-8" fill="url(#purpleGradient)" transform="rotate(216)" opacity="0.9"/>
+      <path d="M 0,-8 Q -4,-16 0,-20 Q 4,-16 0,-8" fill="url(#purpleGradient)" transform="rotate(288)" opacity="0.9"/>
+    </g>
+    
+    <!-- Flower center -->
+    <circle cx="0" cy="0" r="4" fill="#7C3AED"/>
+    
+    <!-- Stem curving to the left -->
+    <path d="M 0,4 Q -3,15 -8,25" fill="none" stroke="#059669" stroke-width="2.5"/>
+    
+    <!-- Leaf on the stem -->
+    <path d="M -6,18 Q -12,16 -14,20 Q -12,24 -6,22 Z" fill="url(#leafGradient)"/>
+  </g>
+  
+  <!-- Leila text in custom script style -->
+  <g transform="translate(60, 50)">
+    <!-- L -->
+    <path d="M 5,0 Q 4,-15 8,-20 Q 10,-22 11,-20 Q 12,-15 10,-5 Q 8,5 10,10 Q 12,12 16,12 Q 20,12 24,10" 
+          fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- e -->
+    <path d="M 28,2 Q 26,-2 30,-2 Q 34,-2 34,2 Q 34,6 30,6 Q 26,6 26,2 L 34,2" 
+          fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- i with dot -->
+    <path d="M 42,2 L 42,10 Q 42,12 43,10" 
+          fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="42" cy="-4" r="2" fill="#8B5CF6"/>
+    
+    <!-- l -->
+    <path d="M 50,-20 Q 50,-10 50,0 Q 50,10 51,12 Q 52,12 53,10" 
+          fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- a -->
+    <path d="M 62,2 Q 60,-2 64,-2 Q 68,-2 68,2 Q 68,6 64,6 Q 60,6 62,2 M 68,0 Q 68,8 68,10 Q 68,12 70,10" 
+          fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Decorative underline swash -->
+    <path d="M 10,18 Q 30,16 50,18 Q 70,20 75,18" 
+          fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

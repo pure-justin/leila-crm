@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Skip all known directories and files
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Route everything else to public/index.php
+RewriteRule ^(.*)$ public/index.php?route=$1 [QSA,L]
